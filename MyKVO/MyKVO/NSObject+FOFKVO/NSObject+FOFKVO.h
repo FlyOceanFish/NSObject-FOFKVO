@@ -10,13 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^FOFObserveValueChanged)(id observedObject, NSString *keyPath, id oldValue, id newValue);
+typedef void(^FOFObserveValueChanged)(id observedObject, NSString *key, id oldValue, id newValue);
 
 @interface NSObject (FOFKVO)
-- (void)fof_addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options block:(FOFObserveValueChanged)block;
+- (void)fof_addObserver:(NSObject *)observer forKey:(NSString *)key options:(NSKeyValueObservingOptions)options block:(FOFObserveValueChanged)block;
 
-- (void)fof_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath context:(nullable void *)context;
+- (void)fof_removeObserver:(NSObject *)observer forKey:(NSString *)key context:(nullable void *)context;
 -(void)fof_removeObserver:(NSObject *)observer;
 @end
 
 NS_ASSUME_NONNULL_END
+
